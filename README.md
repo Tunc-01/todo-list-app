@@ -1,6 +1,6 @@
 # To-Do List App
 
-A simple command-line To-Do application written in Python.
+A simple command-line To-Do List application written in Python.
 
 ## Features
 - Add tasks
@@ -12,5 +12,6 @@ A simple command-line To-Do application written in Python.
 - Python 3.x
 
 ## Run
+
 ```bash
 python todo.py
