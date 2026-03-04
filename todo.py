@@ -6,13 +6,16 @@ def show_menu():
     print("4) Delete task")
     print("5) Exit")
 
+
 def view_tasks(tasks):
     if not tasks:
         print("No tasks yet.")
         return
+
     for i, t in enumerate(tasks, start=1):
         status = "✅" if t["done"] else "⬜"
         print(f"{i}. {status} {t['text']}")
+
 
 def add_task(tasks):
     text = input("Task: ").strip()
@@ -22,10 +25,12 @@ def add_task(tasks):
     else:
         print("Empty task ignored.")
 
+
 def complete_task(tasks):
     view_tasks(tasks)
     if not tasks:
         return
+
     try:
         idx = int(input("Complete which task number? ")) - 1
         if 0 <= idx < len(tasks):
@@ -36,10 +41,12 @@ def complete_task(tasks):
     except ValueError:
         print("Please enter a number.")
 
+
 def delete_task(tasks):
     view_tasks(tasks)
     if not tasks:
         return
+
     try:
         idx = int(input("Delete which task number? ")) - 1
         if 0 <= idx < len(tasks):
@@ -50,11 +57,13 @@ def delete_task(tasks):
     except ValueError:
         print("Please enter a number.")
 
+
 def main():
     tasks = []
     while True:
         show_menu()
         choice = input("Choose: ").strip()
+
         if choice == "1":
             add_task(tasks)
         elif choice == "2":
@@ -68,6 +77,7 @@ def main():
             break
         else:
             print("Invalid choice.")
+
 
 if __name__ == "__main__":
     main()
